@@ -1,0 +1,19 @@
+{
+  "name": "@repo/sanity",
+  "exports": {
+    ".": "./src/index.ts",
+    "./queries": "./src/queries/index.ts",
+    "./types": "./generated/sanity.types.ts"
+  },
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "@sanity/client": "^7.23.0",
+    "@sanity/image-url": "^2.1.1",
+    "groq": "^6.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.0.0",
+    "typescript": "^6.0.3"
+  }
+}

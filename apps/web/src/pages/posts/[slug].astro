@@ -1,0 +1,35 @@
+---
+import PostLayout from "../../layouts/PostLayout.astro";
+import { PortableText } from "astro-portabletext";
+
+export const prerender = false;
+import { POST_QUERY } from "@repo/sanity";
+import { sanityFetch } from "../../lib/sanity";
+
+const { params } = Astro;
+const post = await sanityFetch({ query: POST_QUERY, params });
+
+if (!post) {
+    return new Response(null, {
+        status: 404,
+        statusText: "Not Found",
+    });
+}
+---
+
+<PostLayout>
+    <main class="p-8">
+        <a class="inline-block hover:underline mb-4 text-sm" href="/">
+            &#8598; Back to Home
+        </a>
+        <h1 class="text-3xl mb-2 font-semibold tracking-tight">
+            {post.title}
+        </h1>
+        <p class="text-sm text-neutral-400">{post.publishedAt}</p>
+        <div class="prose">
+            {Array.isArray(post.body) && <PortableText value={post.body} />}
+            <h2>Ther</h2>
+            <h3>Hello</h3>
+        </div>
+    </main>
+</PostLayout>

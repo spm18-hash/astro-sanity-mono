@@ -1,0 +1,21 @@
+{
+  "name": "astro-sanity-mono",
+  "version": "1.0.0",
+  "scripts": {
+    "dev:web": "pnpm -F web dev",
+    "dev:studio": "pnpm -F studio dev",
+    "build": "pnpm -r build",
+    "schema:extract": "pnpm -F studio schema",
+    "schema:types": "pnpm -F studio typegen",
+    "schema:all": "pnpm -F studio types"
+  },
+  "private": true,
+  "packageManager": "pnpm@11.7.0",
+  "engines": {
+    "node": ">=20"
+  },
+  "type": "module",
+  "devDependencies": {
+    "turbo": "^2.9.18"
+  }
+}
